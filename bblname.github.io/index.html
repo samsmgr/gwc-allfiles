@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Name Generator</title>
+</head>
+<body>
+  <h2 id = "title">Baby Boy Lospalluto Generator</h2>
+  <p id = "bottom_text">Generates your baby boy Lospalluto</p>
+  <button onclick = "generateBBL()" id = "generateButton">GENERATE</button>
+  <p id = "name"></p>
+
+  <script>
+  var bblName = [
+    "Noah",
+    "Liam",
+    "William",
+    "Mason",
+    "James",
+    "Benjamin",
+    "Jacob",
+    "Michael",
+    "Ethan",
+    "Alexander",
+    "Oliver",
+    "Daniel",
+    "Lucas",
+    "Matthew",
+    "Aiden",
+    "Jackson",
+    "Logan",
+    "David",
+    "Joseph",
+    "Samuel",
+    "Henry",
+    "Owen",
+    "Sebastian",
+    "Gabriel",
+    "Carter",
+    "Jayden",
+    "John",
+    "Luke",
+    "Anthony",
+    "Isaac",
+    "Dylan",
+    "Wyatt",
+    "Andrew",
+    "Josh",
+    "Jesse",
+    "Grayson",
+    "Julian",
+    "Ryan",
+    "Jaxon",
+    "Nathan",
+    "Caleb",
+    "Hunter",
+    "Oscar",
+    "Thomas",
+    "Aaron",
+    "Lincoln",
+    "Charles",
+    "Landon",
+    "Connor",
+    "Jonathan",
+    "Cameron",
+    "Adrian",
+    "Hudson",
+    "Robert",
+    "Nicholas",
+    "Brayden",
+    "Nolan",
+    "Easton",
+    "Jordan",
+    "Colton",
+    "Evan",
+    "Finn",
+    "Asher",
+    "Dominic",
+    "Austin",
+    "Leo",
+    "Adam",
+    "Jace",
+    "Jose",
+    "Ian",
+    "Cooper",
+    "Gavin",
+    "Carson",
+    "Jaxson",
+    "Theodore",
+    "Jason",
+    "Chase",
+    "Parker",
+    "Xavier",
+    "Kevin",
+    "Zachary",
+    "Tyler",
+  ]
+
+  let namegenerate = document.querySelector('#name');
+  function generateBBL() {
+    var nums = [0, 0];
+    nums[0] = Math.floor((Math.random() * 81));
+    nums[1] = Math.floor((Math.random() * 81));
+    namegenerate.innerText = bblName[nums[0]] + " " + bblName[nums[1]] + " Lospalluto";
+  }
+  </script>
+
+  <style>
+
+  body {
+    background-color: #aec6cf;
+  }
+
+  #title {
+    font-family: Verdana, Geneva, sans-serif;
+    text-align: center;
+    color: white;
+    margin-top: 100px;
+  }
+
+  #bottom_text {
+    font-family: Verdana, Geneva, sans-serif;
+    text-align: center;
+  }
+
+  #generateButton {
+    background-color: #006994; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 560px;
+    margin-top: 100px;
+    font-family: Verdana, Geneva, sans-serif;
+  }
+
+  #name {
+    font-family: Verdana, Geneva, sans-serif;
+    margin-top: 70px;
+    text-align: center;
+  }
+
+  </style>
+
+</body>
+</html>
