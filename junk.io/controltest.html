@@ -1,0 +1,303 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+  <link rel="stylesheet" href="controls.css"></link>
+  <!-- <script src = "controls.js"></script> -->
+
+ <meta charset="UTF-8">
+
+ <title>JUNK.IO</title>
+
+
+</head>
+
+<body>
+  <img src = "fish_junkio.png" id = "guy" width = 50 height = 30></img>
+  <img src = "background_junkio.png" id = "background"> </img>
+  <img src = "messageinbottle_junkio.png" id = "message" onclick = "readme()" ></img>
+
+<div class = "food">
+  <img src = "circle.png" id="food1"></img><br>
+  <img src = "circle.png" id="food2"></img><br>
+  <img src = "circle.png" id="food3"></img><br>
+  <img src = "circle.png" id="food4"></img><br>
+  <img src = "circle.png" id="food5"></img><br>
+  <img src = "circle.png" id="food6"></img><br>
+  <img src = "circle.png" id="food7"></img><br>
+  <img src = "circle.png" id="food8"></img><br>
+  <img src = "circle.png" id="food9"></img><br>
+  <img src = "circle.png" id="food10"></img>
+</div>
+
+<div class = "trash" onclick = "showCoords(event)">
+  <img src = "juul_sprite.png" id="juul"></img>
+  <img src = "waterbottle_junkio.png" id="water_bottle"></img>
+  <img src = "can_junkio.png" id="can"></img>
+  <img src = "plasticbag_junkio.png" id="plasticbag"></img>
+  <img src = "layz_junkio.png" id="lays"></img>
+  <img src = "tire_junkio.png" id="tire"></img>
+  <img src = "spork_junkio.png" id="spork"></img>
+  <img src = "fishpole_junkio.png" id="fishpole"></img>
+  <img src = "flipflop_junkio.png" id="flipflop"></img>
+  <img src = "bottlecap_junkio.png" id="bottlecap"></img>
+  <img src = "straw_junkio.png" id="straw"></img>
+  <img src = "canholder_junkio.png" id="canholder"></img>
+  <img src = "worm_junkio.png" id="worm"></img>
+</div>
+
+<div>
+  <img src = "lives_full_junkio.png" id = "fullheart1"></img>
+  <img src = "lives_full_junkio.png" id = "fullheart2"></img>
+  <img src = "lives_full_junkio.png" id = "fullheart3"></img>
+
+<p id = "screen-log"> </p>
+
+<script type="text/javascript">
+var guy = document.getElementById("guy");
+var container = document.getElementById("container")
+var guyLeft = 590;
+var y = 250;
+var waldo = [food1, food2, food3, food4, food5, food6, food7, food8, food9, food10];
+food1 = document.getElementById("food1");
+food2 = document.getElementById("food2");
+food3 = document.getElementById("food3");
+food4 = document.getElementById("food4");
+food5 = document.getElementById("food5");
+food6 = document.getElementById("food6");
+food7 = document.getElementById("food7");
+food8 = document.getElementById("food8");
+food9 = document.getElementById("food9");
+food10 = document.getElementById("food10");
+message = document.getElementById("message");
+function checkWaldo() {
+  for(i = 0; i < 10; i++) {
+    if((waldo[i].offsetLeft + 5 > guyLeft && waldo[i].offsetLeft - 55 < guyLeft) && (waldo[i].offsetTop + 10 > y && waldo[i].offsetTop - 30 < y))
+     {
+      waldo[i].style.visibility = 'hidden';
+      isDone();
+    }
+  }
+}
+function isDone() {
+  if(waldo[0].style.visibility == 'hidden'
+    && waldo[1].style.visibility == 'hidden'
+    && waldo[2].style.visibility == 'hidden'
+    && waldo[3].style.visibility == 'hidden'
+    && waldo[4].style.visibility == 'hidden'
+    && waldo[5].style.visibility == 'hidden'
+    && waldo[6].style.visibility == 'hidden'
+    && waldo[7].style.visibility == 'hidden'
+    && waldo[8].style.visibility == 'hidden'
+    && waldo[9].style.visibility == 'hidden') {
+      alert("You win! Click on the bottle that just appeared in the center of the screen to read the message inside.");
+      message.style.visibility = 'visible';
+    }
+  }
+function readme() {
+  window.location.href = "bottleclicked.html";
+}
+var smallx = [78, 1159, 970, 1063, 898];
+var smally = [56, 512, 47, 211, 343];
+var mediumx = [347, 682, 137, 758];
+var mediumy = [101, 361, 246, 477];
+var largex = [826, 281, 477, 1063];
+var largey = [133, 483, 331, 331];
+// function checkTrash() {
+//   for(i = 0; i < 5; i++) {
+//     if((smallx[i].offsetLeft + 20 > guyLeft && smallx[i].offsetLeft - 20 < guyLeft) && (smally[i].offsetTop + 20 > y && smally[i].offsetTop - 20 < y))
+//      {
+//        alert("you suck at this game, don't touch the trash");
+//        guyLeft = 590;
+//        guy.style.left = guyLeft + "px";
+//        y = 250;
+//        guy.style.top = y + "px";
+//        loselife();
+//     }
+//   }
+//   for(x = 0; x < 4; x++) {
+//     if((medium[x].offsetLeft + 5 > guyLeft && medium[x].offsetLeft - 5 < guyLeft) && (medium[x].offsetTop + 5 > y && medium[x].offsetTop - 5 < y))
+//      {
+//        alert("you suck at this game, don't touch the trash");
+//        guyLeft = 590;
+//        guy.style.left = guyLeft + "px";
+//        y = 250;
+//        guy.style.top = y + "px";
+//        loselife();
+//     }
+//   }
+//   for(w = 0; w < 4; w++) {
+//     if((large[w].offsetLeft + 70 > guyLeft && large[w].offsetLeft - 100 < guyLeft) && (large[w].offsetTop + 100 > y && large[w].offsetTop - 70 < y))
+//      {
+//        alert("you suck at this game, don't touch the trash");
+//        guyLeft = 590;
+//        guy.style.left = guyLeft + "px";
+//        y = 250;
+//        guy.style.top = y + "px";
+//        loselife();
+//     }
+//   }
+// }
+juul = document.getElementById("juul");
+spork = document.getElementById("spork");
+bottlecap = document.getElementById("bottlecap");
+straw = document.getElementById("straw");
+worm = document.getElementById("worm");
+var small = [juul, spork, bottlecap, straw, worm];
+water_bottle = document.getElementById("water_bottle");
+can = document.getElementById("can");
+lays = document.getElementById("lays");
+flipflop = document.getElementById("flipflop");
+var medium = [water_bottle, can, lays, flipflop];
+plasticbag = document.getElementById("plasticbag");
+tire = document.getElementById("tire");
+fishpole = document.getElementById("fishpole");
+canholder = document.getElementById("canholder");
+var large = [plasticbag, tire, fishpole, canholder];
+var trash = [juul, spork, bottlecap, straw, worm, water_bottle, lays, can, flipflop, plasticbag, tire, fishpole, canholder];
+function isCollide(a, b) {
+    return (
+        ((a.y + a.height) < (b.y)) ||
+        (a.y > (b.y + b.height)) ||
+        ((a.x + a.width) < b.x) ||
+        (a.x > (b.x + b.width))
+    );
+}
+function checkTrash() {
+  for(i = 0; i > 13; i++) {
+    isCollide(guy, trash[i]);
+    var collision = isCollide(guy, trash[i]);
+    alert(collision);
+    console.log(collision);
+    if(isCollide(guy, trash[i])) {
+      alert("you suck at this game, don't touch the trash");
+      guyLeft = 590;
+      guy.style.left = guyLeft + "px";
+      y = 250;
+      guy.style.top = y + "px";
+      loselife();
+    }
+  }
+}
+let screenLog = document.querySelector('#screen-log');
+document.addEventListener('mousemove', logKey);
+function logKey(e) {
+  screenLog.innerText = `
+    Client X/Y: ${e.clientX}, ${e.clientY}`;
+}
+var lives = 3;
+function loselife() {
+  lives -= 1;
+  if(lives==2) {
+    document.getElementById("fullheart1").src = "lives_empty_junkio.png";
+  }
+  if(lives==1) {
+    document.getElementById("fullheart2").src = "lives_empty_junkio.png";
+  }
+  if(lives==0) {
+    document.getElementById("fullheart3").src = "lives_empty_junkio.png";
+    alert("game over. nice try, loser");
+    window.location.href = "junkio.html";
+  }
+}
+function youSuck() {
+  alert("you suck at this game, don't touch the trash");
+  guyLeft = 590;
+  guy.style.left = guyLeft + "px";
+  y = 250;
+  guy.style.top = y + "px";
+  loselife();
+}
+// var circleTrash = [tire, flipflop];
+// var i = 1;
+//
+// var dx = guyLeft - circleTrash[i].style.left;
+// var  dy = y - circleTrash[i].style.top;
+// var distance = Math.sqrt(dx * dx + dy * dy);
+//
+// if (distance < document.getElementById("guy").width + circleTrash[i].width) {
+//   alert("oop");
+// }
+// function checkTrash(){
+//   if(((guyLeft > 65 && guyLeft < 75) && (y > 25 && y < 55))
+//     || ((guyLeft > 115 && guyLeft < 150) && (y > 185 && y < 260))
+//     || ((guyLeft > 195 && guyLeft < 360) && (y > 410 && y < 500))
+//     || ((guyLeft > 435 && guyLeft < 505) && (y > 410 && y < 215))
+//     || ((guyLeft > 635 && guyLeft < 720) && (y > 315 && y < 370))
+//     || ((guyLeft > 720 && guyLeft < 780) && (y > 430 && y < 495))
+//     || ((guyLeft > 870 && guyLeft < 970) && (y > 310 && y < 350))
+//     || ((guyLeft > 975 && guyLeft < 1130) && (y > 265 && y < 360))
+//     || ((guyLeft > 1035 && guyLeft < 1060) && (y > 175 && y < 225))
+//     || ((guyLeft > 950 && guyLeft < 970) && (y > 20 && y < 35))
+//     || ((guyLeft > 1130 && guyLeft < 1160) && (y > 470 && y < 500))
+//     || ((guyLeft > 760 && guyLeft < 870) && (y > 15 && y < 200))
+//     || ((guyLeft > 735 && guyLeft < 905) && (y > 55 && y < 180))
+//   ){
+//     youSuck();
+//   }
+// }
+  //
+  // var trash = [juul, water_bottle, can, plasticbag, lays, tire, spork, fishpole, flipflop, bottlecap, straw, canholder, worm];
+  // function checkTrash() {
+  //   for(i = 0; i < 13; i++) {
+  //     if((trash[i].offsetLeft + 5 > guyLeft && trash[i].offsetLeft - 55 < guyLeft) && (trash[i].offsetTop + 10 > y && trash[i].offsetTop - 30 < y))
+  //      {
+  //        alert("you suck at this game, don't touch the trash");
+  //        guyLeft = 590;
+  //        guy.style.left = guyLeft + "px";
+  //        y = 250;
+  //        guy.style.top = y + "px";
+  //        loselife();
+  //     }
+  //   }
+  // }
+function anim(e) {
+  if (e.keyCode == 39) {
+    if(guyLeft !== 1180) {
+      guyLeft += 5; guy.style.left = guyLeft + "px";
+      document.getElementById("guy").src = "fish_junkio.png";
+      document.getElementById("guy").width = 50;
+      document.getElementById("guy").height = 30;
+      checkWaldo();
+      checkTrash();
+    }
+}
+  else if (e.keyCode == 37) {
+    if(guyLeft !== 10) {
+      guyLeft -= 5; guy.style.left = guyLeft + "px";
+      document.getElementById("guy").src = "fishleft.png";
+      document.getElementById("guy").width = 50;
+      document.getElementById("guy").height = 30;
+      checkWaldo();
+      checkTrash();
+  }
+}
+  else if (e.keyCode == 40) {
+    if(y !== 500) {
+      y += 5; guy.style.top = y + "px";
+      document.getElementById("guy").src = "fishdown.png";
+      document.getElementById("guy").width = 30;
+      document.getElementById("guy").height = 50;
+      checkWaldo();
+      checkTrash();
+  }
+}
+  else if (e.keyCode == 38) {
+    if(y !== 10) {
+      y -= 5; guy.style.top = y + "px";
+      document.getElementById("guy").src = "fishup.png";
+      document.getElementById("guy").width = 30;
+      document.getElementById("guy").height = 50;
+      checkWaldo();
+      checkTrash();
+  }
+}
+} document.onkeydown = anim;
+</script>
+
+<BR><BR>
+<div id="aciklama"></div>
+
+</body>
+
+</html>

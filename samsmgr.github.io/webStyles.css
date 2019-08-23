@@ -1,0 +1,112 @@
+body {
+  background-color: rgb(245, 245, 245);
+}
+
+.tabs {
+  text-align: center;
+  font-size: 30;
+  font-family: "Lucida Console", Monaco, monospace;
+  color: black;
+  padding-top: 20px;
+}
+
+a { color: rgb(176,176,176) } /* Globally */
+
+/* Each state */
+
+a:visited { text-decoration: none; color: rgb(176, 176, 176); }
+a:hover { text-decoration: none; color:black; }
+a:focus { text-decoration: none; color:black; }
+a:hover, a:active { text-decoration: none; color:black }
+
+#hometext {
+  font-size: 400;
+  font-family: monospace;
+  color: rgb(176,176,176);
+  text-align: center;
+  margin-top: 200px;
+}
+
+#portfoliotab {
+  margin-right: 150px;
+  margin-left: 150px
+}
+
+#contacttab {
+  margin-left: 150px;
+}
+
+#tabtxt {
+  border: 1px;
+  border-radius: 3px;
+  border-style: solid;
+  border-color: rgb(176, 176, 176);
+  padding: 10px;
+}
+
+.portfolio {
+  margin-left: 20px;
+  margin-top: 75px;
+}
+
+#morefolio {
+  display: none;
+  margin-left: 20px;
+  margin-top: 100px;
+}
+
+#portfolioimg {
+  text-align: center;
+  margin-left: 40px;
+  border-radius: 10px;
+}
+
+#portfolioimgr {
+  text-align: center;
+  margin-left: 40px;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+#readmorebtn {
+  margin-left:580px;
+  background-color: rgb(245,245,245);
+  border: none;
+  color: rgb(176,176,176);
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: 50px;
+}
+
+#aboutme {
+  margin-left: 450px;
+  font-size: 50;
+  font-family: "Avant Garde", "Avant Garde Gothic", "Open Sans", "Helvetica", Calibri, sans-serif;
+  color: rgb(176,176,176);
+  padding-top: 100px;
+}
+
+#contactme {
+  margin-left: 500px;
+  font-size: 50;
+  font-family: "Avant Garde", "Avant Garde Gothic", "Open Sans", "Helvetica", Calibri, sans-serif;
+  color: rgb(176,176,176);
+  padding-top: 100px;
+}
+
+#itsfree {
+  margin-left: 220px;
+}
+
+#pixelriver {
+  padding-top: 100px;
+  padding-left: 300px;
+}
+
+#contshr {
+  padding-left: 570px;
+}
+
+#contker {
+  padding-left: 50px;
+}

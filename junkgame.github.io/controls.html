@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+  <link rel="stylesheet" href="controls.css"></link>
+  <!-- <script src = "controls.js"></script> -->
+
+ <meta charset="UTF-8">
+
+ <title>JUNK.IO</title>
+
+
+</head>
+
+<body>
+  <img src = "fish_junkio.png" id = "guy" width = 50 height = 30></img>
+  <img src = "background_junkio.png" id = "background"> </img>
+  <img src = "messageinbottle_junkio.png" id = "message" onclick = "readme()" ></img>
+  <div id = "targetBox"></div>
+
+  <div class = ovalTargets>
+    <img src = "circle.png" width = 50 height = 60 id = "fishpole1"></div>
+    <img src = "circle.png" width = 50 height = 60 id = "fishpole2"></div>
+    <img src = "circle.png" width = 60 height = 60 id = "fishpole3"></div>
+    <img src = "circle.png" width = 35 height = 35 id = "can1"></div>
+    <img src = "circle.png" width = 35 height = 35 id = "can2"></div>
+    <img src = "circle.png" width = 85 height = 85 id = "canholder1"></div>
+    <img src = "circle.png" width = 85 height = 85 id = "canholder2"></div>
+  </div>
+
+<div class = "food">
+  <img src = "circle.png" id="food1"></img><br>
+  <img src = "circle.png" id="food2"></img><br>
+  <img src = "circle.png" id="food3"></img><br>
+  <img src = "circle.png" id="food4"></img><br>
+  <img src = "circle.png" id="food5"></img><br>
+  <img src = "circle.png" id="food6"></img><br>
+  <img src = "circle.png" id="food7"></img><br>
+  <img src = "circle.png" id="food8"></img><br>
+  <img src = "circle.png" id="food9"></img><br>
+  <img src = "circle.png" id="food10"></img>
+</div>
+
+<div class = "trash" onclick = "showCoords(event)">
+  <img src = "juul_sprite.png" id="juul"></img>
+  <img src = "waterbottle_junkio.png" id="water_bottle"></img>
+  <img src = "can_junkio.png" id="can"></img>
+  <img src = "plasticbag_junkio.png" id="plasticbag"></img>
+  <img src = "layz_junkio.png" id="lays"></img>
+  <img src = "tire_junkio.png" id="tire"></img>
+  <img src = "spork_junkio.png" id="spork"></img>
+  <img src = "fishpole_junkio.png" id="fishpole"></img>
+  <img src = "flipflop_junkio.png" id="flipflop"></img>
+  <img src = "bottlecap_junkio.png" id="bottlecap"></img>
+  <img src = "straw_junkio.png" id="straw"></img>
+  <img src = "canholder_junkio.png" id="canholder"></img>
+  <img src = "worm_junkio.png" id="worm"></img>
+</div>
+
+<div>
+  <img src = "lives_full_junkio.png" id = "fullheart1"></img>
+  <img src = "lives_full_junkio.png" id = "fullheart2"></img>
+  <img src = "lives_full_junkio.png" id = "fullheart3"></img>
+
+<p id = "screen-log"> </p>
+
+<script type="text/javascript">
+
+var guy = document.getElementById("guy");
+var container = document.getElementById("container")
+var guyLeft = 590;
+var y = 250;
+var waldo = [food1, food2, food3, food4, food5, food6, food7, food8, food9, food10];
+food1 = document.getElementById("food1");
+food2 = document.getElementById("food2");
+food3 = document.getElementById("food3");
+food4 = document.getElementById("food4");
+food5 = document.getElementById("food5");
+food6 = document.getElementById("food6");
+food7 = document.getElementById("food7");
+food8 = document.getElementById("food8");
+food9 = document.getElementById("food9");
+food10 = document.getElementById("food10");
+message = document.getElementById("message");
+
+//check whether guy is touching food
+function checkWaldo() {
+  for(i = 0; i < 10; i++) {
+    if((waldo[i].offsetLeft + 5 > guyLeft && waldo[i].offsetLeft - 55 < guyLeft) && (waldo[i].offsetTop + 10 > y && waldo[i].offsetTop - 30 < y))
+     {
+      waldo[i].style.visibility = 'hidden';
+      isDone();
+    }
+  }
+}
+
+//check if all food has been eaten
+function isDone() {
+  if(waldo[0].style.visibility == 'hidden'
+    && waldo[1].style.visibility == 'hidden'
+    && waldo[2].style.visibility == 'hidden'
+    && waldo[3].style.visibility == 'hidden'
+    && waldo[4].style.visibility == 'hidden'
+    && waldo[5].style.visibility == 'hidden'
+    && waldo[6].style.visibility == 'hidden'
+    && waldo[7].style.visibility == 'hidden'
+    && waldo[8].style.visibility == 'hidden'
+    && waldo[9].style.visibility == 'hidden') {
+      alert("You win! Click on the bottle that just appeared in the center of the screen to read the message inside.");
+      message.style.visibility = 'visible';
+
+    }
+  }
+
+function readme() {
+  window.location.href = "message.html";
+}
+
+//various variables in our attempt to make trash collision detection happen
+juul = document.getElementById("juul");
+spork = document.getElementById("spork");
+bottlecap = document.getElementById("bottlecap");
+straw = document.getElementById("straw");
+worm = document.getElementById("worm");
+
+water_bottle = document.getElementById("water_bottle");
+can = document.getElementById("can");
+lays = document.getElementById("lays");
+flipflop = document.getElementById("flipflop");
+
+plasticbag = document.getElementById("plasticbag");
+tire = document.getElementById("tire");
+fishpole = document.getElementById("fishpole");
+canholder = document.getElementById("canholder");
+
+fishpole1 = document.getElementById("fishpole1");
+fishpole2 = document.getElementById("fishpole2");
+fishpole3 = document.getElementById("fishpole3");
+canholder1 = document.getElementById("canholder1");
+canholder2 = document.getElementById("canholder2");
+can1 = document.getElementById("can1");
+can2 = document.getElementById("can2");
+
+var trash = [juul, spork, bottlecap, straw, worm, water_bottle, lays, can1, can2, flipflop, canholder1, canholder2, fishpole1, fishpole2, fishpole3, plasticbag, tire];
+
+var lives = 3;
+
+function loselife() {
+  lives -= 1;
+  if(lives==2) {
+    document.getElementById("fullheart1").src = "lives_empty_junkio.png";
+  }
+  if(lives==1) {
+    document.getElementById("fullheart2").src = "lives_empty_junkio.png";
+  }
+  if(lives==0) {
+    document.getElementById("fullheart3").src = "lives_empty_junkio.png";
+    alert("game over. nice try, loser");
+    window.location.href = "junkio.html";
+  }
+}
+
+function checkTrash() {
+  for(i = 0; i < 17; i++) {
+    var guyRadius = guy.width / 2;
+    var trashRadius = trash[i]. width / 2;
+    var comb_radii = guyRadius + trashRadius;
+    var guyX = 1279 - guy.offsetLeft - guyRadius;
+    var guyY = 612 - guy.offsetTop - guyRadius;
+    var trashX = 1279 - trash[i].offsetLeft - trashRadius;
+    var trashY = 612 - trash[i].offsetTop - trashRadius;
+    var distX = guyX - trashX;
+    var distY = guyY - trashY;
+    var pythagoras = Math.sqrt((distY * distY) + (distX * distX));
+    if(comb_radii > pythagoras) {
+      alert("i told you to stay away from the trash, idiot");
+      youSuck();
+    }
+  }
+}
+
+function youSuck() {
+  guyLeft = 590;
+  guy.style.left = guyLeft + "px";
+  y = 250;
+  guy.style.top = y + "px";
+  loselife();
+}
+
+function anim(e) {
+  if (e.keyCode == 39) {
+    if(guyLeft !== 1180) {
+      guyLeft += 5; guy.style.left = guyLeft + "px";
+      document.getElementById("guy").src = "fish_junkio.png";
+      document.getElementById("guy").width = 50;
+      document.getElementById("guy").height = 30;
+      checkWaldo();
+      checkTrash();
+
+    }
+}
+  else if (e.keyCode == 37) {
+    if(guyLeft !== 10) {
+      guyLeft -= 5; guy.style.left = guyLeft + "px";
+      document.getElementById("guy").src = "fishleft.png";
+      document.getElementById("guy").width = 50;
+      document.getElementById("guy").height = 30;
+      checkWaldo();
+      checkTrash();
+
+  }
+}
+  else if (e.keyCode == 40) {
+    if(y !== 500) {
+      y += 5; guy.style.top = y + "px";
+      document.getElementById("guy").src = "fishdown.png";
+      document.getElementById("guy").width = 30;
+      document.getElementById("guy").height = 50;
+      checkWaldo();
+      checkTrash();
+
+  }
+}
+  else if (e.keyCode == 38) {
+    if(y !== 10) {
+      y -= 5; guy.style.top = y + "px";
+      document.getElementById("guy").src = "fishup.png";
+      document.getElementById("guy").width = 30;
+      document.getElementById("guy").height = 50;
+      checkWaldo();
+      checkTrash();
+  }
+}
+
+} document.onkeydown = anim;
+
+</script>
+
+<BR><BR>
+<div id="aciklama"></div>
+
+</body>
+
+</html>
